@@ -32,10 +32,10 @@ def portfolio():
 
 @main.route('/email', methods=["POST"])
 def email():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    subject = request.form.get('subject')
-    message = request.form.get('message')
+    name = request.json['name']
+    email = request.json['email']
+    subject = request.json['subject']
+    message = request.json['message']
     print(name)
     print(email)
     print(subject)
@@ -43,6 +43,10 @@ def email():
     form_msg = Message(subject + f" ({email})", sender=email, 
                             recipients=['faizahmed11234@gmail.com', 'admin@faiz4work.com'], 
                             body=message)
-    mail.send(form_msg)
-    print("Email sent!")
-    return redirect(url_for('main.home'))
+
+    try:
+        mail.send(form_msg)
+        print("Email sent!")
+    except:
+        print("Email is not sent due to some reasons")
+    return "done"

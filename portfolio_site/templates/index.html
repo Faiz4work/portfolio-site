@@ -218,7 +218,7 @@
 
               <div>
                 <i class="ri-mail-send-line"></i>
-                <p>faizahmed11234@gmail.com</p>
+                <p>admin@faiz4work.com</p>
               </div>
 
               <div>
@@ -230,7 +230,8 @@
           </div>
 
           <div class="col-lg-8 col-md-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="{{ url_for('main.email') }}" method="post" role="form" class="php-email-form">
+            <form action="{{ url_for('main.email') }}" method="post" role="form" 
+                                    class="php-email-form" id="email-form">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>
@@ -241,14 +242,19 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" 
+                id="message" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center">
+                <button type="submit" id="submit-button">Send Message</button>
+                <img src="static/img/animations/fidget-spinner.gif" alt="loding gif" id="loading_gif"
+                style="display: none;">
+              </div>
             </form>
           </div>
 
@@ -277,5 +283,5 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-
+<script src="{{ url_for('static', filename='js/email.js') }}"></script>
 {% endblock %}
