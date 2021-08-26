@@ -1,1 +1,58 @@
-<h1>portfolio would be here</h1>
+{% extends "sections/layout.html" %}
+{% block body %}
+
+<section>
+<h1>My Completed Projects - Sorted by recent projects</h1>
+</section>
+<main>
+    <table class="table table-bordered col-md-8 col-lg-8">
+        <thead>
+            <tr>
+                <th>S.no</th>
+                <th>Project Link</th>
+                <th>Project Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="https://newicarus.pythonanywhere.com" target="_blank">
+                         NewIcarus <span class="arrow">&#8669;</span></a></td>
+                <td><img src="" alt="image will be here"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="https://newjobsystem.pythonanywhere.com" target="_blank">
+                         NewJobSystem <span class="arrow">&#8669;</span></a></td>
+                <td><img src="" alt="image will be here"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="https://newsales.pythonanywhere.com" target="_blank">
+                     NewSales <span class="arrow">&#8669;</span></a></td>
+                <td><img src="" alt="image will be here"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="https://silvereye.pythonanywhere.com" target="_blank">
+                     SilverEye <span class="arrow">&#8669;</span></a></td>
+                <td><img src="" alt="image will be here"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="https://pakistanstickart.com" target="_blank">
+                    PakistanStickArt.com <span class="arrow">&#8669;</span></a></td>
+                <td><img src="" alt="image will be here"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="https://nordicdigitalconsulting.com/" target="_blank">
+                    NordicDigitalConsulting <span class="arrow">&#8669;</span></a></td>
+                <td><img src="" alt="image will be here"></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</main>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
+{% endblock body %}

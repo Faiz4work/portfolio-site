@@ -1,0 +1,11 @@
+section{
+    margin-top: 100px;
+    padding: 20px;
+    background-color: aliceblue;
+    display: block;
+    text-align: center;
+}
+
+.arrow{
+    transform: rotate(45deg);
+}
