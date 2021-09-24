@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from portfolio_site import mail
 from flask_mail import Message
-
+from sqlalchemy import desc
+from portfolio_site.models import *
 
 main = Blueprint('main', __name__)
 
@@ -27,7 +28,8 @@ def api():
 
 @main.route('/portfolio')
 def portfolio():
-    return render_template('sections/portfolio.html')
+    portfolio_list = Portfolio.query.order_by(desc("id")).all()
+    return render_template('sections/portfolio2.html', portfolio_list=portfolio_list)
 
 
 @main.route('/email', methods=["POST"])
@@ -36,10 +38,6 @@ def email():
     email = request.json['email']
     subject = request.json['subject']
     message = request.json['message']
-    print(name)
-    print(email)
-    print(subject)
-    print(message)
     form_msg = Message(subject + f" ({email})", sender=email, 
                             recipients=['faizahmed11234@gmail.com', 'admin@faiz4work.com'], 
                             body=message)

@@ -1,0 +1,24 @@
+{% extends "sections/layout.html" %}
+{% block body %}
+
+<section>
+<h1>My Completed Projects - Sorted by recent projects</h1>
+</section>
+<main class="container">
+<div class="row">
+    {% for portfolio in portfolio_list %}
+        <div class="box p-3 m-3">
+            {% if portfolio.web_icon_url %}
+            <img src="{{portfolio.web_icon_url}}" alt="" class="web_icon m-2">
+            {% endif %}
+            <a href="{{portfolio.website_url}}" target="_blank">{{ portfolio.name }}</a>
+            
+        </div>
+    {% endfor %}
+</div>
+
+            
+
+</main>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
+{% endblock body %}
