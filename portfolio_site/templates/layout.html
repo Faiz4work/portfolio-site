@@ -27,34 +27,15 @@
   <!-- Template Main CSS File -->
   <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 
+  <!-- Custom css file -->
+  <link href="{{ url_for('static', filename='css/custom_style.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
+ {% include "sections/header.html" %}
 
-      <div class="logo">
-        <h1><a href="/">Faiz4work</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="/"><img src="static/img/logo.png" alt="website logo" style="width: 200px; height:200px;"></a> -->
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="{{url_for('main.portfolio')}}">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#">Get Started</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
 
   {% block body %}
   {% endblock %}

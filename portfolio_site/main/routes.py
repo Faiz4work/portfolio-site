@@ -29,8 +29,11 @@ def api():
 @main.route('/portfolio')
 def portfolio():
     portfolio_list = Portfolio.query.order_by(desc("id")).all()
-    return render_template('sections/portfolio2.html', portfolio_list=portfolio_list)
+    return render_template('sections/portfolio.html', portfolio_list=portfolio_list)
 
+@main.route('/contact')
+def contact():
+    return render_template("sections/contact.html")
 
 @main.route('/email', methods=["POST"])
 def email():

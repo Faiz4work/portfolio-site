@@ -1,0 +1,24 @@
+.bottom_btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: -40px;
+}
+
+.bottom_btns > a {
+    background-color: rgb(248, 118, 118);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    margin-left: 10px;
+}
+
+.bottom_btns > a:hover {
+    background-color: red;
+}
+
+.bottom_btns > a {
+    transition: all 1s ease-out;
+}

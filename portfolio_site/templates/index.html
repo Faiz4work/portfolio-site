@@ -1,4 +1,4 @@
-{% extends "sections/layout.html" %}
+{% extends "layout.html" %}
 {% block body %}
 
 
@@ -11,8 +11,8 @@
           <h1 data-aos="fade-up">Grow your business with Me.</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">I am a freelancer and providing Website Development, Web designing, Web Scraping, Web Automation and much more.</h2>
           <div data-aos="fade-up" data-aos-delay="800">
-            <a href="#" class="btn-get-started scrollto">Get Started</a>
-            <a href="#" class="btn-get-started scrollto">See Portfolio</a>
+            <a href="{{ url_for('quote.quote_page') }}" class="btn-get-started scrollto">Get A Quote</a>
+            <a href="{{ url_for('main.portfolio') }}" class="btn-get-started scrollto">See Portfolio</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -24,42 +24,6 @@
   </section><!-- End Hero -->
 
   <main id="main">
-
-    <!-- ======= Clients Section ======= -->
-    <!-- <section id="clients" class="clients clients">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{{ url_for('static', filename='img/clients/client-1.png') }}" class="img-fluid" alt="" data-aos="zoom-in">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{{ url_for('static', filename='img/clients/client-2.png') }}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{{ url_for('static', filename='img/clients/client-3.png') }}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{{ url_for('static', filename='img/clients/client-4.png') }}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{{ url_for('static', filename='img/clients/client-5.png') }}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <img src="{{ url_for('static', filename='img/clients/client-6.png') }}" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-    End Clients Section -->
 
 
     <!-- ======= Counts Section ======= -->
@@ -88,7 +52,7 @@
       </div>
     </section><!-- End Counts Section -->
 
-   {% include "sections/services.html" %}
+   {% include "sections/services_page/services.html" %}
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg d-none">
@@ -188,81 +152,10 @@
     {% include "sections/faq.html" %}
 
         
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Contact Us</h2>
-        </div>
-
-        <div class="row">
-
-
-
-          <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
-           <div class="contact-about">
-              <div class="social-links">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="info">
-              <div>
-                <i class="ri-map-pin-line"></i>
-                <p>Karachi, Pakistan</p>
-              </div>
-
-              <div>
-                <i class="ri-mail-send-line"></i>
-                <p>admin@faiz4work.com</p>
-              </div>
-
-              <div>
-                <i class="ri-phone-line"></i>
-                <p>+92 3020230479</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-8 col-md-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="{{ url_for('main.email') }}" method="post" role="form" 
-                                    class="php-email-form" id="email-form">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" 
-                id="message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center">
-                <button type="submit" id="submit-button">Send Message</button>
-                <img src="static/img/animations/fidget-spinner.gif" alt="loding gif" id="loading_gif"
-                style="display: none;">
-              </div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
+    <div class="bottom_btns">
+      <a href="{{ url_for('quote.quote_page') }}">Get A Quote</a>
+      <a href="{{ url_for('main.portfolio') }}">See Portfolio</a>
+    </div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -283,5 +176,4 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<script src="{{ url_for('static', filename='js/email.js') }}"></script>
 {% endblock %}

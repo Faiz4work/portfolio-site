@@ -1,0 +1,71 @@
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="/">Faiz4work</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="/"><img src="static/img/logo.png" alt="website logo" style="width: 200px; height:200px;"></a> -->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#about">About</a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
+          <div class="dropdown">
+            <a class="dropbtn" href="#services">Services <span><i class="bi bi-caret-down-fill"></i></span></a>
+            
+            <div class="dropdown-content">
+              <a href="{{ url_for('main.web_development') }}">Web Development</a>
+              <a href="{{ url_for('main.web_scraping') }}">Web Scraping</a>
+              <a href="{{ url_for('main.api') }}">API Development</a>
+              <a href="{{ url_for('main.ecommerce') }}">E-Commerce Management</a>
+            </div>
+          </div> 
+          <li><a class="nav-link scrollto " href="{{url_for('main.portfolio')}}">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('main.contact') }}">Contact</a></li>
+          <li><a class="getstarted scrollto" href="{{ url_for('quote.quote_page') }}">Get A Quote</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <style>
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/*.dropdown:hover .dropbtn {background-color: #3e8e41;}  */
+  </style>

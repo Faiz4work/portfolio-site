@@ -22,4 +22,7 @@ def create_app():
     from portfolio_site.main.routes import main
     app.register_blueprint(main)
 
+    from portfolio_site.quote.routes import quote
+    app.register_blueprint(quote)
+
     return app
