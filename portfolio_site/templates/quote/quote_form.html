@@ -1,7 +1,24 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<div class="mt-5">
-    <h1>Enter details for getting an estimation of your project.</h1>
+<div class="form_div">
+    <h1>Quotation Form</h1>
+    <h4>Tell us about your project so we can suggest you a reasonable price and timeframe.</h4>
+
+
+        <label for="pType">Please choose project type:</label>
+        <select name="pType" id="pType">
+            <option value="0">--Select--</option>
+            <option value="1">Website Development</option>
+            <option value="2">Web Scraping</option>
+            <option value="3">A.P.I Development</option>
+            <option value="4">E-Commerce Store</option>
+        </select>
+    
+        {% include "quote/web_dev_form.html" %}
 </div>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/quote.css') }}">
+<script src="{{ url_for('static', filename='js/quote.js') }}"></script>
 {% endblock %}

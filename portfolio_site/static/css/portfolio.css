@@ -22,3 +22,29 @@ section{
     width: 50px;
     height: 50px;
 }
+
+.myrow{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+}
+
+.web_sH{
+    text-align: center;
+}
+
+.side_panel{
+    /* border: 1px solid red; */
+    box-shadow: 2px 0px 5px gray;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.scraping_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 10px rgb(136, 136, 212);
+}

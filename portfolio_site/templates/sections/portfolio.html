@@ -5,8 +5,13 @@
 <h1>My Completed Projects - Sorted by recent projects</h1>
 </section>
 <main class="container">
+
+<div class="myrow">
+
 <div class="row">
+    <h3>Websites</h3>
     {% for portfolio in portfolio_list %}
+    
         <div class="box p-3 m-3">
             {% if portfolio.web_icon_url %}
             <img src="{{portfolio.web_icon_url}}" alt="" class="web_icon m-2">
@@ -15,10 +20,24 @@
             
         </div>
     {% endfor %}
+
+</div>
+<div class="side_panel">
+    <p class="web_sH">Web Scrapign & APIs</p>
+    <div class="scraping_block">
+        <span>Amazon.com</span>
+        <p>type: <span>Web Scraping</span></p>
+    </div>
+    <div class="scraping_block">
+        <span>square.com</span>
+        <p>type: <span>Payment API</span></p>
+    </div>
 </div>
 
-            
+</div>
 
 </main>
+
+
 <link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
 {% endblock body %}
